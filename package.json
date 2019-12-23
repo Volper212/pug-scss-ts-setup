@@ -1,0 +1,56 @@
+{
+  "name": "pug-scss-ts-setup",
+  "version": "1.0.0",
+  "description": "A setup for easy static site development without redundancy and with automation",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --project src",
+    "watch": "tsc --project src -w"
+  },
+  "keywords": [
+    "pug",
+    "scss",
+    "ts",
+    "setup"
+  ],
+  "author": "Volper",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/autoprefixer": "^9.6.1",
+    "@types/fs-extra": "^8.0.1",
+    "@types/imagemin-mozjpeg": "^8.0.0",
+    "@types/imagemin-optipng": "^5.2.0",
+    "@types/imagemin-webp": "^5.1.0",
+    "@types/pug": "^2.0.4",
+    "@types/recursive-readdir": "^2.2.0",
+    "@types/sass": "^1.16.0",
+    "@types/uglify-js": "^3.0.4",
+    "@types/yargs": "^13.0.3",
+    "@typescript-eslint/eslint-plugin": "^2.11.0",
+    "@typescript-eslint/parser": "^2.11.0",
+    "eslint": "^6.7.2",
+    "typescript": "^3.7.3"
+  },
+  "bin": {
+    "psst-setup": "./dist/cli.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.3",
+    "better-logging": "^3.5.0",
+    "fs-extra": "^8.1.0",
+    "imagemin-keep-folder": "^5.3.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-optipng": "^7.1.0",
+    "imagemin-webp": "^5.1.0",
+    "node-watch": "^0.6.3",
+    "postcss": "^7.0.24",
+    "pug": "^2.0.4",
+    "recursive-readdir": "^2.2.2",
+    "rollup": "^1.27.12",
+    "rollup-plugin-uglify": "^6.0.4",
+    "rollup-typescript": "^1.2.1",
+    "sass": "^1.23.7",
+    "trash": "^6.1.1",
+    "yargs": "^15.0.2"
+  }
+}

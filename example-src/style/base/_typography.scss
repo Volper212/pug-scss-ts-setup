@@ -1,0 +1,85 @@
+@use '../abstracts' as *;
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $main-font-color;
+  font: 1em / 1.25em $sans-serif;
+  overflow-x: hidden;
+
+  @include tablet {
+    line-height: 1.375em;
+  }
+}
+
+@mixin heading($font-size, $line-height) {
+  font-weight: 700;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+.h1 {
+  @include heading(2em, 1.25em);
+
+  @include tablet {
+    font-size: 2.5em;
+    line-height: 1.125em;
+  }
+
+  @include desktop {
+    font-size: 3em;
+    line-height: 1.05em;
+  }
+
+  font-family: $serif;
+  text-align: center;
+}
+
+h2,
+.h2 {
+  @include heading(2em, 1.15384615em);
+
+  @include tablet {
+    line-height: 1.25em;
+  }
+
+  @include desktop {
+    font-size: 2.25em;
+  }
+}
+
+h3,
+.h3 {
+  @include heading(1.375em, 1.13636364em);
+
+  @include tablet {
+    font-size: 1.5em;
+    line-height: 1.25em;
+  }
+
+  @include desktop {
+    font-size: 1.75em;
+  }
+}
+
+h4,
+.h4 {
+  @include heading(1.125em, 1.11111111em);
+
+  @include tablet {
+    line-height: 1.22222222em;
+  }
+}

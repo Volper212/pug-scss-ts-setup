@@ -1,0 +1,20 @@
+extends /_template
+
+block head
+  meta(name="description", content="Just an example website to see pug in action")
+  title= filename
+
+block style
+  +scss('index')
+
+block content
+  p Pug locals include:
+  ul
+    li the entire path module (<code>path</code>),
+    li the base directory of the .pug file (<code>basedir</code>): #{basedir}
+    li the name of the file currently processed (<code>filename</code>): #{filename}
+    li the <code>compileSass</code> function, which outputs minified and prefixed CSS from a .scss file; useful for inlining critical CSS.
+    li other variables set in file <code>psst-config.js</code>
+
+block scripts
+  script(src="js/index.js")
