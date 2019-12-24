@@ -1,6 +1,6 @@
 {
   "name": "pug-scss-ts-setup",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A setup for easy static site development without redundancy and with automation",
   "main": "index.js",
   "repository": {
@@ -32,8 +32,7 @@
     "@types/yargs": "^13.0.3",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
-    "eslint": "^6.7.2",
-    "typescript": "^3.7.3"
+    "eslint": "^6.7.2"
   },
   "bin": {
     "psst-setup": "./dist/cli.js"
@@ -55,6 +54,7 @@
     "rollup-typescript": "^1.2.1",
     "sass": "^1.23.7",
     "trash": "^6.1.1",
+    "typescript": "^3.7.4",
     "yargs": "^15.0.2"
   }
 }
