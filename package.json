@@ -29,10 +29,10 @@
     "@types/recursive-readdir": "^2.2.0",
     "@types/sass": "^1.16.0",
     "@types/uglify-js": "^3.0.4",
-    "@types/yargs": "^13.0.3",
-    "@typescript-eslint/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/parser": "^2.11.0",
-    "eslint": "^6.7.2"
+    "@types/yargs": "^13.0.4",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
+    "eslint": "^6.8.0"
   },
   "bin": {
     "psst-setup": "./dist/cli.js"
@@ -46,13 +46,13 @@
     "imagemin-optipng": "^7.1.0",
     "imagemin-webp": "^5.1.0",
     "node-watch": "^0.6.3",
-    "postcss": "^7.0.24",
+    "postcss": "^7.0.25",
     "pug": "^2.0.4",
     "recursive-readdir": "^2.2.2",
-    "rollup": "^1.27.12",
+    "rollup": "^1.27.14",
     "rollup-plugin-uglify": "^6.0.4",
     "rollup-typescript": "^1.2.1",
-    "sass": "^1.23.7",
+    "sass": "^1.24.0",
     "trash": "^6.1.1",
     "typescript": "^3.7.4",
     "yargs": "^15.0.2"
