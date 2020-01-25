@@ -1,4 +1,5 @@
 module.exports = {
+  output: 'dist',
   scripts: ['index'], // index => index.ts, test => test.ts
   pugLocals: {},
   uglifyOptions: {

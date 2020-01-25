@@ -1,5 +1,7 @@
+import { output } from './config';
+
 export const src = 'src';
-export const dist = 'dist';
+export const dist = output || 'dist';
 
 export const srcFolders = {
   scripts: `${src}/ts`,

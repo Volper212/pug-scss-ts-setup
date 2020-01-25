@@ -2,12 +2,18 @@ import { MinifyOptions } from 'uglify-js';
 import { Options as PugOptions, LocalsObject } from 'pug';
 import { Options as TypescriptOptions } from 'rollup-typescript';
 
-export default function getConfig(): Promise<{
+export const {
+  files,
+  scripts,
+  output,
+  pugLocals,
+  uglifyOptions,
+  typescriptOptions
+} = require(`${process.cwd()}/psst-config.js`) as {
   files: string[];
   scripts: string[];
-  pugLocals: PugOptions & LocalsObject;
-  uglifyOptions: MinifyOptions;
-  typescriptOptions: TypescriptOptions;
-}> {
-  return import(`${process.cwd()}/psst-config.js`);
-}
+  output?: string;
+  pugLocals?: PugOptions & LocalsObject;
+  uglifyOptions?: MinifyOptions;
+  typescriptOptions?: TypescriptOptions;
+};

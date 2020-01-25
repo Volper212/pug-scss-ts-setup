@@ -7,7 +7,7 @@ import { relative } from 'path';
 import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
 
-export default async function images(): Promise<void> {
+export default async function buildImages(): Promise<void> {
   const webpPlugins = [webp()];
   const jpgPngPlugins = [mozjpeg(), optipng()];
   const jpgPngInput = [`${srcFolders.images}/**/*.{jpg,png}`];

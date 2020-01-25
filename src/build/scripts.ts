@@ -6,10 +6,9 @@ import { dirname, relative } from 'path';
 
 import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
-import getConfig from '../config';
+import { scripts, uglifyOptions, typescriptOptions } from '../config';
 
-export default async function scripts(): Promise<void> {
-  const { scripts, uglifyOptions, typescriptOptions } = await getConfig();
+export default async function buildScripts(): Promise<void> {
   const plugins = [typescript(typescriptOptions), uglify(uglifyOptions)];
 
   await Promise.all(

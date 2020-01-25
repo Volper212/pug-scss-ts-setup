@@ -8,10 +8,10 @@ import readdir from 'recursive-readdir';
 
 import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
-import getConfig from '../config';
+import { pugLocals } from '../config';
 import { removeExtension } from '../utility';
 
-export default async function pug(): Promise<void> {
+export default async function buildPug(): Promise<void> {
   const plugins = [autoprefixer];
   const sassProcessor = postcss(plugins);
 
@@ -31,8 +31,6 @@ export default async function pug(): Promise<void> {
       }).css
     ).css;
   }
-
-  const { pugLocals } = await getConfig();
 
   await Promise.all(
     (await readdir(srcFolders.pug, ['_*.pug'])).map(file =>
