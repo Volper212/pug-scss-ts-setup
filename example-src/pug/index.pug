@@ -1,7 +1,7 @@
 extends /_template
 
 block head
-  meta(name="description", content="Just an example website to see pug in action")
+  meta(name='description', content='Just an example website to see pug in action')
   title= filename
 
 block style
@@ -17,4 +17,4 @@ block content
     li other variables set in file <code>psst-config.js</code>
 
 block scripts
-  script(src="js/index.js")
+  script(src=absolute('js/index.js'))

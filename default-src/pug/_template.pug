@@ -9,35 +9,12 @@ mixin scss(name)
 doctype html
 html
   head
-    //- script(async src="https://www.googletagmanager.com/gtag/js?id=ENTER YOUR ID HERE")
-    //- script
-      :uglify-js
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-
-        // gtag(...)
-
-        function gtag_report_conversion(url) {
-          var callback = function() {
-            if(typeof(url) != 'undefined') {
-              window.location = url;
-            }
-          };
-
-          // gtag(...)
-          return false;
-        }
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
     block head
       title Title
-    link(rel="shortcut icon", href=absolute('favicon.ico'))
+    link(rel='shortcut icon', href=absolute('favicon.ico'))
     style
       block style
         +scss('main')
