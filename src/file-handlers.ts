@@ -12,9 +12,9 @@ export const enum FileEvent {
 
 /** Used to handle file updates and removals. */
 export interface FileHandler {
-  onEvent: (event: FileEvent, filename: string) => Promise<void>;
+  onEvent(event: FileEvent, filename: string): Promise<void>;
   /** Checks if a path should be handled with this handler */
-  checkPath: (path: string) => boolean;
+  checkPath(path: string): boolean;
 }
 
 export class StyleHandler implements FileHandler {
