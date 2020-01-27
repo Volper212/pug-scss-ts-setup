@@ -1,6 +1,12 @@
+import { existsSync } from 'fs-extra';
+
 import { MinifyOptions } from 'uglify-js';
 import { Options as PugOptions, LocalsObject } from 'pug';
 import { Options as TypescriptOptions } from 'rollup-typescript';
+
+import { premade } from './premade';
+
+export const configFile = 'psst-config.js';
 
 export interface Config {
   files: string[];
@@ -12,14 +18,9 @@ export interface Config {
 }
 
 function getConfig(): Config {
-  try {
-    return require(`${process.cwd()}/psst-config.js`);
-  } catch {
-    return {
-      files: [],
-      scripts: []
-    };
-  }
+  return require(existsSync(configFile)
+    ? `${process.cwd()}/${configFile}`
+    : premade.configFile);
 }
 
 export const {

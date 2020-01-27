@@ -1,3 +1,6 @@
+import { ensureDir } from 'fs-extra';
+
+import { dist } from '../paths';
 import { log } from '../logger';
 import buildPug from './pug';
 import buildScripts from './scripts';
@@ -9,6 +12,7 @@ export { buildPug, buildScripts, buildImages, buildOther };
 export default async function build(): Promise<void> {
   log('Starting build...');
 
+  await ensureDir(dist);
   await Promise.all([
     buildPug(), // Pug & Sass (SCSS) => minified HTML with internal minified and prefixed CSS
     buildScripts(), // Typescript => minified and bundled Javascript
