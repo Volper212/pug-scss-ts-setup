@@ -1,6 +1,6 @@
 {
   "name": "pug-scss-ts-setup",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "A setup for easy static site development without redundancy and with automation",
   "main": "index.js",
   "repository": {

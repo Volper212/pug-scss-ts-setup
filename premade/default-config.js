@@ -22,5 +22,6 @@ module.exports = {
   },
   typescriptOptions: {
     target: 'es5'
-  }
+  },
+  rollupPlugins: []
 };

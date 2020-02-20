@@ -6,10 +6,17 @@ import { dirname, relative } from 'path';
 
 import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
-import { scripts, uglifyOptions, typescriptOptions } from '../config';
+import {
+  scripts,
+  typescriptOptions,
+  uglifyOptions,
+  rollupPlugins
+} from '../config';
 
 export default async function buildScripts(): Promise<void> {
-  const plugins = [typescript(typescriptOptions), uglify(uglifyOptions)];
+  const plugins = [typescript(typescriptOptions), uglify(uglifyOptions)].concat(
+    rollupPlugins
+  );
 
   await Promise.all(
     scripts.map(async file => {
