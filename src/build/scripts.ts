@@ -1,6 +1,6 @@
 import { rollup } from 'rollup';
-import typescript from 'rollup-typescript';
-import { uglify } from 'rollup-plugin-uglify';
+import typescript from '@rollup/plugin-typescript';
+import { terser } from 'rollup-plugin-terser';
 import { ensureDir } from 'fs-extra';
 import { dirname, relative } from 'path';
 
@@ -9,13 +9,13 @@ import { log } from '../logger';
 import {
   scripts,
   typescriptOptions,
-  uglifyOptions,
+  minifyOptions,
   rollupPlugins
 } from '../config';
 
 export default async function buildScripts(): Promise<void> {
-  const plugins = [typescript(typescriptOptions), uglify(uglifyOptions)].concat(
-    rollupPlugins
+  const plugins = [typescript(typescriptOptions), terser(minifyOptions)].concat(
+    rollupPlugins || []
   );
 
   await Promise.all(

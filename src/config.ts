@@ -1,9 +1,9 @@
 import { existsSync } from 'fs-extra';
 
-import { MinifyOptions } from 'uglify-js';
-import { Options as PugOptions, LocalsObject } from 'pug';
-import { Options as TypescriptOptions } from 'rollup-typescript';
-import { Plugin } from 'rollup';
+import type { MinifyOptions } from 'terser';
+import type { Options as PugOptions, LocalsObject } from 'pug';
+import type { RollupTypescriptOptions } from '@rollup/plugin-typescript';
+import type { Plugin } from 'rollup';
 
 import { premade } from './premade';
 
@@ -14,8 +14,8 @@ export interface Config {
   scripts: string[];
   output?: string;
   pugLocals?: PugOptions & LocalsObject;
-  uglifyOptions?: MinifyOptions;
-  typescriptOptions?: TypescriptOptions;
+  minifyOptions?: MinifyOptions;
+  typescriptOptions?: RollupTypescriptOptions;
   rollupPlugins?: Plugin[];
 }
 
@@ -30,7 +30,7 @@ export const {
   scripts,
   output,
   pugLocals,
-  uglifyOptions,
+  minifyOptions,
   typescriptOptions,
   rollupPlugins
 } = getConfig();

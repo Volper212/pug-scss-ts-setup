@@ -20,8 +20,9 @@
   "author": "Volper",
   "license": "MIT",
   "devDependencies": {
-    "@types/autoprefixer": "^9.6.1",
-    "@types/fs-extra": "^8.0.1",
+    "@types/autoprefixer": "^9.7.0",
+    "@types/estree": "0.0.42",
+    "@types/fs-extra": "^8.1.0",
     "@types/imagemin-mozjpeg": "^8.0.0",
     "@types/imagemin-optipng": "^5.2.0",
     "@types/imagemin-webp": "^5.1.0",
@@ -29,31 +30,34 @@
     "@types/recursive-readdir": "^2.2.0",
     "@types/sass": "^1.16.0",
     "@types/uglify-js": "^3.0.4",
-    "@typescript-eslint/eslint-plugin": "^2.17.0",
-    "@typescript-eslint/parser": "^2.17.0",
-    "eslint": "^6.8.0"
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "eslint": "^6.8.0",
+    "typescript": "3.8.3"
   },
   "bin": {
     "psst-setup": "./dist/cli.js"
   },
   "dependencies": {
+    "@rollup/plugin-typescript": "^4.0.0",
     "autoprefixer": "^9.7.4",
     "better-logging": "^3.5.0",
-    "commander": "^4.1.0",
+    "commander": "^4.1.1",
     "fs-extra": "^8.1.0",
     "imagemin-keep-folder": "^5.3.2",
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.1.0",
     "imagemin-webp": "^5.1.0",
     "node-watch": "^0.6.3",
-    "postcss": "^7.0.26",
-    "pug": "^2.0.4",
+    "postcss": "^7.0.27",
     "recursive-readdir": "^2.2.2",
-    "rollup": "^1.29.1",
-    "rollup-plugin-uglify": "^6.0.4",
-    "rollup-typescript": "^1.2.1",
-    "sass": "^1.25.0",
-    "trash": "^6.1.1",
-    "typescript": "^3.7.5"
+    "rollup": "^2.0.3",
+    "rollup-plugin-terser": "^5.3.0",
+    "trash": "^6.1.1"
+  },
+  "peerDependencies": {
+    "pug": ">=2.0",
+    "sass": ">=1.23",
+    "typescript": ">=2.1"
   }
 }
