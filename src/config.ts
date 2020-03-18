@@ -1,9 +1,9 @@
 import { existsSync } from 'fs-extra';
 
-import type { MinifyOptions } from 'terser';
-import type { Options as PugOptions, LocalsObject } from 'pug';
-import type { RollupTypescriptOptions } from '@rollup/plugin-typescript';
-import type { Plugin } from 'rollup';
+import { MinifyOptions } from 'terser';
+import { Options as PugOptions, LocalsObject } from 'pug';
+import { RollupTypescriptOptions } from '@rollup/plugin-typescript';
+import { Plugin } from 'rollup';
 
 import { premade } from './premade';
 

@@ -17,8 +17,10 @@ A setup for easy static site development without redundancy and with automation.
 ## Installation
 
 ```bash
-npm i -g pug-scss-ts-setup
+npm i -g pug-scss-ts-setup pug sass typescript
 ```
+
+Ignore all other peerDependencies than listed above.
 
 ## Usage
 

@@ -9,7 +9,10 @@ import { warn, error } from './logger';
 program
   .command('build')
   .description('Build the entire website')
-  .action(() => build().catch(error));
+  .action(async () => {
+    await build().catch(error);
+    process.exit();
+  });
 
 program
   .command('watch')
