@@ -39,6 +39,8 @@ psst-setup <command>
 |   `setup`    |                        Sets up an empty-ish project                        |
 |  `setup -e`  |                         Sets up an example project                         |
 
+Run with the `--dev` option for development mode (no minify etc.).
+
 ## Contributing
 
 All pull requests, tests and issues are welcome.

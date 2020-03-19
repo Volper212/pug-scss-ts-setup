@@ -4,7 +4,9 @@ import program from 'commander';
 import build from './build';
 import watch from './watch';
 import setup from './setup';
-import { warn, error } from './logger';
+import { error } from './logger';
+
+program.option('-d, --dev', 'Development mode');
 
 program
   .command('build')
@@ -42,18 +44,6 @@ program
     }
   });
 
-program
-  .command('example')
-  .description('Deprecated - use "instant -e" instead')
-  .action(async () => {
-    try {
-      warn('The example command is deprecated. Use "instant -e" instead');
-      await setup(true);
-      await build();
-      watch();
-    } catch (err) {
-      error(err);
-    }
-  });
-
 program.parse(process.argv);
+
+export const dev = program.dev;

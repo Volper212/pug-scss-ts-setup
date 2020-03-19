@@ -3,13 +3,18 @@ import webp from 'imagemin-webp';
 import mozjpeg from 'imagemin-mozjpeg';
 import optipng from 'imagemin-optipng';
 import { relative } from 'path';
+import { Plugin } from 'imagemin';
 
 import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
+import { dev } from '../cli';
 
 export default async function buildImages(): Promise<void> {
   const webpPlugins = [webp()];
-  const jpgPngPlugins = [mozjpeg(), optipng()];
+  const jpgPngPlugins: Plugin[] = [];
+  if (!dev) {
+    jpgPngPlugins.push(mozjpeg(), optipng());
+  }
   const jpgPngInput = [`${srcFolders.images}/**/*.{jpg,png}`];
 
   function replaceOutputDir(output: string): string {

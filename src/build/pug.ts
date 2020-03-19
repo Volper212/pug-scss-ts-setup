@@ -10,6 +10,7 @@ import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
 import { pugLocals } from '../config';
 import { removeExtension } from '../utility';
+import { dev } from '../cli';
 
 export default async function buildPug(): Promise<void> {
   const plugins = [autoprefixer];
@@ -27,7 +28,7 @@ export default async function buildPug(): Promise<void> {
     return sassProcessor.process(
       renderSass({
         data: `@use '${srcFolders.style}/${file}'`,
-        outputStyle: 'compressed'
+        outputStyle: dev ? 'expanded' : 'compressed'
       }).css
     ).css;
   }
@@ -40,6 +41,7 @@ export default async function buildPug(): Promise<void> {
         )}.html`,
         renderPug(file, {
           basedir: srcFolders.pug,
+          pretty: dev,
           path,
           compileSass,
           ...pugLocals // Other options from the config file
