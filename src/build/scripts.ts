@@ -15,10 +15,11 @@ import {
 import { dev } from '../cli';
 
 export default async function buildScripts(): Promise<void> {
-  const plugins = [typescript(typescriptOptions), ...rollupPlugins || []];
-  if (!dev) {
-    plugins.push(terser(minifyOptions));
-  }
+  const plugins = [typescript(dev ? {
+    ...typescriptOptions,
+    target: 'esnext'
+  } : typescriptOptions), ...rollupPlugins || []];
+  if (!dev) plugins.push(terser(minifyOptions));
 
   await Promise.all(
     scripts.map(async file => {
