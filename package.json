@@ -1,6 +1,6 @@
 {
   "name": "pug-scss-ts-setup",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "A setup for easy static site development without redundancy and with automation",
   "main": "index.js",
   "repository": {
@@ -48,7 +48,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.1.0",
     "imagemin-webp": "^5.1.0",
-    "node-watch": "^0.6.3",
+    "nsfw": "^1.2.7",
     "postcss": "^7.0.27",
     "recursive-readdir": "^2.2.2",
     "rollup": "^2.1.0",

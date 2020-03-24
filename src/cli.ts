@@ -21,7 +21,7 @@ program
   .description('Watch all the file types for changes')
   .action(async () => {
     await build().catch(error);
-    watch();
+    await watch();
   });
 
 program
@@ -38,7 +38,7 @@ program
     try {
       await setup(options.example);
       await build();
-      watch();
+      await watch();
     } catch (err) {
       error(err);
     }
