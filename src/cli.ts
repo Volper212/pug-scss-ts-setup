@@ -16,10 +16,13 @@ program
     process.exit();
   });
 
+export let watchMode = false;
+
 program
   .command('watch')
   .description('Watch all the file types for changes')
   .action(async () => {
+    watchMode = true;
     await build().catch(error);
     await watch();
   });
@@ -36,6 +39,7 @@ program
   .option('-e, --example', 'Set up an example project instead of an empty one')
   .action(async options => {
     try {
+      watchMode = true;
       await setup(options.example);
       await build();
       await watch();

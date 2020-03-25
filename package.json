@@ -1,6 +1,6 @@
 {
   "name": "pug-scss-ts-setup",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "A setup for easy static site development without redundancy and with automation",
   "main": "index.js",
   "repository": {
@@ -21,7 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "@types/autoprefixer": "^9.7.1",
-    "@types/estree": "^0.0.43",
+    "@types/estree": "^0.0.44",
     "@types/fs-extra": "^8.1.0",
     "@types/imagemin-mozjpeg": "^8.0.0",
     "@types/imagemin-optipng": "^5.2.0",
@@ -30,8 +30,8 @@
     "@types/recursive-readdir": "^2.2.0",
     "@types/sass": "^1.16.0",
     "@types/uglify-js": "^3.0.4",
-    "@typescript-eslint/eslint-plugin": "^2.24.0",
-    "@typescript-eslint/parser": "^2.24.0",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
     "eslint": "^6.8.0",
     "typescript": "^3.8.3"
   },
@@ -40,7 +40,7 @@
   },
   "dependencies": {
     "@rollup/plugin-typescript": "^4.0.0",
-    "autoprefixer": "^9.7.4",
+    "autoprefixer": "^9.7.5",
     "better-logging": "^3.5.0",
     "chokidar": "^3.3.1",
     "commander": "^5.0.0",
@@ -49,16 +49,16 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-optipng": "^7.1.0",
     "imagemin-webp": "^5.1.0",
-    "nsfw": "^1.2.7",
     "postcss": "^7.0.27",
     "recursive-readdir": "^2.2.2",
-    "rollup": "^2.1.0",
+    "rollup": "^2.2.0",
     "rollup-plugin-terser": "^5.3.0",
-    "trash": "^6.1.1"
+    "trash": "^6.1.1",
+    "tslib": "^1.11.1"
   },
   "peerDependencies": {
     "pug": ">=2.0",
-    "sass": ">=1.23",
-    "typescript": ">=2.1"
+    "sass": ">=1.26",
+    "typescript": ">=3.8"
   }
 }

@@ -1,8 +1,6 @@
-import { rollup } from 'rollup';
+import { rollup, watch } from 'rollup';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
-import { ensureDir } from 'fs-extra';
-import { dirname, relative } from 'path';
 
 import { srcFolders, distFolders } from '../paths';
 import { log } from '../logger';
@@ -12,31 +10,42 @@ import {
   minifyOptions,
   rollupPlugins
 } from '../config';
-import { dev } from '../cli';
+import { watchMode, dev } from '../cli';
 
 export default async function buildScripts(): Promise<void> {
-  const plugins = [typescript(dev ? {
-    ...typescriptOptions,
-    target: 'esnext'
-  } : typescriptOptions), ...rollupPlugins || []];
+  const plugins = [
+    typescript(
+      dev
+        ? {
+          ...typescriptOptions,
+          target: 'esnext'
+        }
+        : typescriptOptions
+    ),
+    ...(rollupPlugins || [])
+  ];
+
   if (!dev) plugins.push(terser(minifyOptions));
 
-  await Promise.all(
-    scripts.map(async file => {
-      await ensureDir(
-        `${distFolders.scripts}/${relative(srcFolders.images, dirname(file))}`
-      );
-      const bundle = await rollup({
+  const watchOptions = scripts.map(
+    file =>
+      ({
         input: `${srcFolders.scripts}/${file}.ts`,
-        plugins
-      });
-
-      return bundle.write({
-        file: `${distFolders.scripts}/${file}.js`,
-        format: 'iife'
-      });
-    })
+        plugins,
+        output: {
+          file: `${distFolders.scripts}/${file}.js`,
+          format: 'iife'
+        }
+      } as const)
   );
+
+  if (watchMode) {
+    watch(watchOptions);
+  } else {
+    for (const options of watchOptions) {
+      await (await rollup(options)).write(options.output);
+    }
+  }
 
   log('Scripts built!');
 }

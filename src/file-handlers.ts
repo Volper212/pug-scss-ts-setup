@@ -1,6 +1,6 @@
 import { copy, remove } from 'fs-extra';
 
-import { buildPug, buildImages, buildScripts } from './build';
+import { buildPug, buildImages } from './build';
 import { srcFolders, distFolders } from './paths';
 import { removeExtension } from './utility';
 
@@ -42,16 +42,6 @@ const handlers: FileHandler[] = [
         `${removeExtension(
           file.replace(srcFolders.pug, distFolders.html)
         )}.html`
-      )
-  ],
-  [
-    new RegExp(`^${srcFolders.scripts}.*\\.(ts|js)$`),
-    buildScripts,
-    (file: string): Promise<void> =>
-      remove(
-        `${removeExtension(
-          file.replace(srcFolders.scripts, distFolders.scripts)
-        )}.js`
       )
   ],
   makeFileMapper(srcFolders.images, distFolders.images),
