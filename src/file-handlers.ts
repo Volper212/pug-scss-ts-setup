@@ -21,11 +21,11 @@ function makeFileMapper(srcFolder: string, distFolder: string): FileHandler {
   ];
 }
 
-type FileHandler = [
-  RegExp,
-  (file: string) => Promise<void>,
-  ((file: string) => Promise<void>)?
-];
+interface HandleFile {
+  (file: string): Promise<void>;
+}
+
+type FileHandler = [RegExp, HandleFile, HandleFile?];
 
 const handlers: FileHandler[] = [
   [new RegExp(`^${srcFolders.style}.*\\.scss$`), buildPug],
