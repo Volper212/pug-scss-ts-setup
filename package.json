@@ -1,6 +1,6 @@
 {
   "name": "pug-scss-ts-setup",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A setup for easy static site development without redundancy and with automation",
   "main": "index.js",
   "repository": {
@@ -20,8 +20,10 @@
   "author": "Volper",
   "license": "MIT",
   "devDependencies": {
-    "@types/autoprefixer": "^9.7.1",
+    "@types/autoprefixer": "^9.7.2",
     "@types/estree": "^0.0.44",
+    "@types/express": "^4.17.4",
+    "@types/express-serve-static-core": "^4.17.3",
     "@types/fs-extra": "^8.1.0",
     "@types/imagemin-mozjpeg": "^8.0.0",
     "@types/imagemin-optipng": "^5.2.0",
@@ -29,19 +31,18 @@
     "@types/pug": "^2.0.4",
     "@types/recursive-readdir": "^2.2.0",
     "@types/sass": "^1.16.0",
-    "@types/uglify-js": "^3.0.4",
-    "@typescript-eslint/eslint-plugin": "^2.25.0",
-    "@typescript-eslint/parser": "^2.25.0",
-    "eslint": "^6.8.0",
-    "typescript": "^3.8.3"
+    "@types/uglify-js": "^3.0.5",
+    "@typescript-eslint/eslint-plugin": "^2.27.0",
+    "@typescript-eslint/parser": "^2.27.0",
+    "eslint": "^6.8.0"
   },
   "bin": {
     "psst-setup": "./dist/cli.js"
   },
   "dependencies": {
     "@rollup/plugin-typescript": "^4.0.0",
-    "autoprefixer": "^9.7.5",
-    "better-logging": "^3.5.0",
+    "autoprefixer": "^9.7.6",
+    "better-logging": "^4.0.4",
     "chokidar": "^3.3.1",
     "commander": "^5.0.0",
     "fs-extra": "^9.0.0",
@@ -50,15 +51,13 @@
     "imagemin-optipng": "^7.1.0",
     "imagemin-webp": "^5.1.0",
     "postcss": "^7.0.27",
+    "pug": "^2.0.4",
     "recursive-readdir": "^2.2.2",
-    "rollup": "^2.2.0",
+    "rollup": "^2.3.4",
     "rollup-plugin-terser": "^5.3.0",
+    "sass": "^1.26.3",
     "trash": "^6.1.1",
-    "tslib": "^1.11.1"
-  },
-  "peerDependencies": {
-    "pug": ">=2.0",
-    "sass": ">=1.26",
-    "typescript": ">=3.8"
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
   }
 }
