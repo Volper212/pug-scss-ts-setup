@@ -14,7 +14,7 @@ import { watchMode, dev } from '../cli';
 
 export default async function buildScripts(): Promise<void> {
   if (dev) {
-    Object.assign(typescriptOptions, { target: 'esnext' });
+    Object.assign(typescriptOptions, { target: 'es2019' });
   }
 
   const plugins = [typescript(typescriptOptions), ...(rollupPlugins || [])];
