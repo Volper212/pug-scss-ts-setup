@@ -9,7 +9,7 @@ async function webpOnRemove(file: string): Promise<void> {
 
   await Promise.all([
     remove(distPath),
-    remove(`${removeExtension(distPath)}.webp`)
+    remove(`${removeExtension(distPath)}.webp`),
   ]);
 }
 
@@ -17,7 +17,7 @@ function makeFileMapper(srcFolder: string, distFolder: string): FileHandler {
   return [
     new RegExp(`^${srcFolder}`),
     (file): Promise<void> => copy(file, file.replace(srcFolder, distFolder)),
-    (file): Promise<void> => remove(file.replace(srcFolder, distFolder))
+    (file): Promise<void> => remove(file.replace(srcFolder, distFolder)),
   ];
 }
 
@@ -32,7 +32,7 @@ const handlers: FileHandler[] = [
   [
     new RegExp(`^${srcFolders.images}.*\\.(jpg|png)$`),
     buildImages,
-    webpOnRemove
+    webpOnRemove,
   ],
   [
     new RegExp(`^${srcFolders.pug}.*\\.pug$`),
@@ -42,10 +42,10 @@ const handlers: FileHandler[] = [
         `${removeExtension(
           file.replace(srcFolders.pug, distFolders.html)
         )}.html`
-      )
+      ),
   ],
   makeFileMapper(srcFolders.images, distFolders.images),
-  makeFileMapper(srcFolders.other, distFolders.other)
+  makeFileMapper(srcFolders.other, distFolders.other),
 ];
 
 export default handlers;

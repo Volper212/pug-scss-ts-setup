@@ -32,5 +32,5 @@ export const {
   pugLocals,
   minifyOptions,
   typescriptOptions,
-  rollupPlugins
+  rollupPlugins,
 } = getConfig();

@@ -17,7 +17,7 @@ export default async function build(): Promise<void> {
     buildPug(), // Pug & Sass (SCSS) => minified HTML with internal minified and prefixed CSS
     buildScripts(), // Typescript => minified and bundled Javascript
     buildImages(), // .jpg, .png => .webp + compressed .jpg, .png
-    buildOther() // Other files like .htaccess or favicon.ico
+    buildOther(), // Other files like .htaccess or favicon.ico
   ]);
 
   log('Build successful!');

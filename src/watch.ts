@@ -12,7 +12,9 @@ export default async function watch(): Promise<void> {
     if (event.endsWith('Dir')) return;
     for (const [regex, onChange, onRemove] of handlers) {
       if (regex.test(path)) {
-        return (event === 'unlink' ? onRemove || onChange : onChange)(path).catch(error);
+        return (event === 'unlink' ? onRemove || onChange : onChange)(
+          path
+        ).catch(error);
       }
     }
   });

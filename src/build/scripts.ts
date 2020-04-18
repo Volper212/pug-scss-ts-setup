@@ -8,34 +8,28 @@ import {
   scripts,
   typescriptOptions,
   minifyOptions,
-  rollupPlugins
+  rollupPlugins,
 } from '../config';
 import { watchMode, dev } from '../cli';
 
 export default async function buildScripts(): Promise<void> {
-  const plugins = [
-    typescript(
-      dev
-        ? {
-          ...typescriptOptions,
-          target: 'esnext'
-        }
-        : typescriptOptions
-    ),
-    ...(rollupPlugins || [])
-  ];
+  if (dev) {
+    Object.assign(typescriptOptions, { target: 'esnext' });
+  }
+
+  const plugins = [typescript(typescriptOptions), ...(rollupPlugins || [])];
 
   if (!dev) plugins.push(terser(minifyOptions));
 
   const watchOptions = scripts.map(
-    file =>
+    (file) =>
       ({
         input: `${srcFolders.scripts}/${file}.ts`,
         plugins,
         output: {
           file: `${distFolders.scripts}/${file}.js`,
-          format: 'iife'
-        }
+          format: 'iife',
+        },
       } as const)
   );
 

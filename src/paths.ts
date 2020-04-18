@@ -10,11 +10,12 @@ export const srcFolders = {
   images: `${src}/img`,
   style: `${src}/style`,
   pug: `${src}/pug`,
-  other: `${src}/other`
+  other: `${src}/other`,
 } as const;
+
 export const distFolders = {
   scripts: `${dist}/js`,
   images: `${dist}/img`,
   html: dist,
-  other: dist
+  other: dist,
 } as const;

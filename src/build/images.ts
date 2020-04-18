@@ -25,14 +25,14 @@ export default async function buildImages(): Promise<void> {
     // Convert to .webp
     imagemin(jpgPngInput, {
       use: webpPlugins,
-      replaceOutputDir
+      replaceOutputDir,
     }),
     // Fallback for browsers that don't support .webp
     // NOTE: You need fallback code inside Sass (Modernizr etc.) or Pug (<picture> element)
     imagemin(jpgPngInput, {
       use: jpgPngPlugins,
-      replaceOutputDir
-    })
+      replaceOutputDir,
+    }),
   ]);
 
   log('Images built!');

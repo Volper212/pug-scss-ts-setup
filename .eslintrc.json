@@ -5,13 +5,18 @@
     "node": true
   },
   "parser": "@typescript-eslint/parser",
-  "extends": "plugin:@typescript-eslint/recommended",
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
   "globals": {
     "Atomics": "readonly",
     "SharedArrayBuffer": "readonly"
   },
   "parserOptions": {
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2020,
     "sourceType": "module"
   },
   "rules": {
@@ -23,7 +28,6 @@
     "no-useless-return": "warn",
     "yoda": "warn",
     "no-undef-init": "warn",
-    "no-undefined": "error",
     "no-use-before-define": "error",
 
     "block-spacing": "warn",
@@ -34,13 +38,15 @@
     "computed-property-spacing": "warn",
     "eol-last": "warn",
     "func-call-spacing": "warn",
-    "indent": ["error", 2],
+    "@typescript-eslint/indent": ["error", 2],
     "key-spacing": "warn",
     "keyword-spacing": "warn",
     "linebreak-style": "error",
     "new-cap": "warn",
     "no-tabs": "error",
     "no-trailing-spaces": "warn",
+    "quotes": "off",
+    "@typescript-eslint/quotes": ["warn", "single"],
     "semi": "error",
     "semi-spacing": "warn",
     "semi-style": "warn",
@@ -53,10 +59,8 @@
         "asyncArrow": "always"
       }
     ],
-    "space-in-parens": "warn",
     "space-infix-ops": "warn",
     "space-unary-ops": "warn",
-    "spaced-comment": "warn",
     "switch-colon-spacing": "warn",
 
     "arrow-spacing": "warn",

@@ -28,13 +28,13 @@ export default async function buildPug(): Promise<void> {
     return sassProcessor.process(
       renderSass({
         data: `@use '${srcFolders.style}/${file}'`,
-        outputStyle: dev ? 'expanded' : 'compressed'
+        outputStyle: dev ? 'expanded' : 'compressed',
       }).css
     ).css;
   }
 
   await Promise.all(
-    (await readdir(srcFolders.pug, ['_*.pug'])).map(file =>
+    (await readdir(srcFolders.pug, ['_*.pug'])).map((file) =>
       outputFile(
         `${distFolders.html}/${removeExtension(
           relative(srcFolders.pug, file)
@@ -44,7 +44,7 @@ export default async function buildPug(): Promise<void> {
           pretty: dev,
           path,
           compileSass,
-          ...pugLocals // Other options from the config file
+          ...pugLocals, // Other options from the config file
         })
       )
     )

@@ -31,13 +31,13 @@ program
   .command('setup')
   .description('Set up the project')
   .option('-e, --example', 'Set up an example project instead of an empty one')
-  .action(options => setup(options.example).catch(error));
+  .action((options) => setup(options.example).catch(error));
 
 program
   .command('instant')
   .description('Set up the project and start working instantly')
   .option('-e, --example', 'Set up an example project instead of an empty one')
-  .action(async options => {
+  .action(async (options) => {
     try {
       watchMode = true;
       await setup(options.example);
