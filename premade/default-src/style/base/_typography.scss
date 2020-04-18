@@ -1,4 +1,5 @@
-@use '../abstracts' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/media';
 
 *,
 ::before,
@@ -12,11 +13,11 @@ html {
 
 body {
   color: $main-font-color;
-  font: 1em / 1.25em $sans-serif;
+  font: 1em / 1.25 $sans-serif;
   overflow-x: hidden;
 
-  @include tablet {
-    line-height: 1.375em;
+  @include media.tablet-up {
+    line-height: 1.375;
   }
 }
 
@@ -32,54 +33,51 @@ a:hover {
 
 h1,
 .h1 {
-  @include heading(2em, 1.25em);
+  @include heading(2em, 1.25);
 
-  @include tablet {
+  @include media.tablet-up  {
     font-size: 2.5em;
-    line-height: 1.125em;
+    line-height: 1.125;
   }
 
-  @include desktop {
+  @include media.desktop-up {
     font-size: 3em;
-    line-height: 1.05em;
+    line-height: 1.05;
   }
-
-  font-family: $serif;
-  text-align: center;
 }
 
 h2,
 .h2 {
-  @include heading(2em, 1.15384615em);
+  @include heading(2em, 1.15384615);
 
-  @include tablet {
-    line-height: 1.25em;
+  @include media.tablet-up {
+    line-height: 1.25;
   }
 
-  @include desktop {
+  @include media.desktop-up {
     font-size: 2.25em;
   }
 }
 
 h3,
 .h3 {
-  @include heading(1.375em, 1.13636364em);
+  @include heading(1.375em, 1.13636364);
 
-  @include tablet {
+  @include media.tablet-up {
     font-size: 1.5em;
-    line-height: 1.25em;
+    line-height: 1.25;
   }
 
-  @include desktop {
+  @include media.desktop-up {
     font-size: 1.75em;
   }
 }
 
 h4,
 .h4 {
-  @include heading(1.125em, 1.11111111em);
+  @include heading(1.125em, 1.11111111);
 
-  @include tablet {
-    line-height: 1.22222222em;
+  @include media.tablet-up {
+    line-height: 1.22222222;
   }
 }

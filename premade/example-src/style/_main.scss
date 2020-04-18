@@ -1,5 +1,2 @@
-@use 'abstracts';
-@use 'base';
-
-@use 'components/header';
-@use 'components/footer';
+@use 'base/reset';
+@use 'base/typography';

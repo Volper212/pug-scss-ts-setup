@@ -1,17 +1,17 @@
 // Media queries
-@mixin tablet {
+@mixin tablet-up {
   @media (min-width: 600px) {
     @content;
   }
 }
 
-@mixin tablet-landscape {
+@mixin tablet-landscape-up {
   @media (min-width: 900px) {
     @content;
   }
 }
 
-@mixin desktop {
+@mixin desktop-up {
   @media (min-width: 1200px) {
     @content;
   }
