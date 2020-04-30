@@ -34,12 +34,15 @@ export default async function buildScripts(): Promise<void> {
   );
 
   if (watchMode) {
-    watch(watchOptions);
+    const watcher = watch(watchOptions);
+    watcher.on('event', (event) => {
+      if (event.code === 'END') log('Scripts built!');
+    });
   } else {
     for (const options of watchOptions) {
       await (await rollup(options)).write(options.output);
     }
-  }
 
-  log('Scripts built!');
+    log('Scripts built!');
+  }
 }
