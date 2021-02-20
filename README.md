@@ -1,3 +1,7 @@
+# Project abandoned
+
+Reason: I found an easier way to do this using Webpack. Also this library is very unmantainable and bloated.
+
 # pug-scss-ts-setup
 
 (**psst-setup** in short)
